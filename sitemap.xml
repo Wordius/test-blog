@@ -62,21 +62,6 @@
 	</url>
 	
 	<url>
-		<loc>https://example.com/tags/writing/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://example.com/tags/criticmarkup/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://example.com/tags/editorially/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://example.com/tags/gtd/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
@@ -107,7 +92,52 @@
 	</url>
 	
 	<url>
+		<loc>https://example.com/tags/writing/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/criticmarkup/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/editorially/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/stationery/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/filofax/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/parker/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://example.com/tags/apps/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/alfred/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/dictionaries/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/merriam-webster/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
 	
@@ -147,47 +177,17 @@
 	</url>
 	
 	<url>
+		<loc>https://example.com/tags/editorial-workflows/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
 		<loc>https://example.com/tags/apple/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
 	
 	<url>
 		<loc>https://example.com/tags/backmarket/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://example.com/tags/stationery/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://example.com/tags/filofax/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://example.com/tags/parker/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://example.com/tags/alfred/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://example.com/tags/dictionaries/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://example.com/tags/merriam-webster/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://example.com/tags/editorial-workflows/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
 	

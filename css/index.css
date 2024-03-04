@@ -5,10 +5,10 @@
 	src: url("../fonts/tabler-icons.eot?v2.45.0");
 	src: url("../fonts/tabler-icons.eot?#iefix-v2.45.0")
 	src: url("../fonts/tabler-icons.woff2")
-	format("woff2"), url("../fonts/tabler-icons.woff?");*/ 
-	/*format("embedded-opentype"), url("../fonts/tabler-icons.woff2?v2.45.0")*/
-	/*format("woff"), url("../fonts/tabler-icons.ttf?v2.45.0")*/ 
-	/*format("truetype");*/
+	format("woff2"), url("../fonts/tabler-icons.woff?");
+	format("embedded-opentype"), url("../fonts/tabler-icons.woff2?v2.45.0")
+	format("woff"), url("../fonts/tabler-icons.ttf?v2.45.0")
+	format("truetype");
   }
 
 :root {
