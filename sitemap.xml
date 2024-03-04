@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	
+	<url>
+		<loc>https://example.com/blog/2013-01-08-getting-things-done-with-semantic-notes/</loc>
+		<lastmod>2013-01-08</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/blog/2013-01-11-reviving-the-filofax/</loc>
+		<lastmod>2013-01-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/blog/2013-01-25-rems-ems-or-pixels/</loc>
+		<lastmod>2013-01-25</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/blog/2013-02-13-harbingers-of-editorial-change/</loc>
+		<lastmod>2013-02-13</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/blog/2013-03-24-alfred-dictionary-search/</loc>
+		<lastmod>2013-03-24</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/blog/2014-09-28-plain-text-diary-using-drafts-with-write-for-ios/</loc>
+		<lastmod>2014-09-28</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/blog/2015-03-16-editorial-workflow/</loc>
+		<lastmod>2015-03-16</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/blog/2024-02-06-my-life-in-macs/</loc>
+		<lastmod>2024-02-06</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/about/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/blog/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/writing/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/criticmarkup/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/editorially/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/gtd/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/nvalt/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/stationery/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/filofax/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/parker/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/web-design/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/ems/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/pixels/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/rems/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/apps/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/alfred/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/dictionaries/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/merriam-webster/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/editorial-workflows/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/apple/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/diary/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/drafts/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/keyboard-maestro/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/launch-center-pro/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/write-for-mac/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/write-for-iphone/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/write-for-ipad/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/backmarket/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/tags/categories/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://example.com/blog/2024-02-24-stroke-and-apples-vision-pro/</loc>
+		<lastmod>2024-02-24</lastmod>
+	</url>
+</urlset>

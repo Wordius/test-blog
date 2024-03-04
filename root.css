@@ -1,0 +1,289 @@
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+
+html {
+	font-size: 62.5%;
+}
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: "calluna-sans", sans-serif;
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 1024px;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+p {
+	font-family: sans-serif;
+	margin-block-end: 0;
+}
+article p:last-child {
+	margin-bottom: 0;
+}
+article p {
+    font-family: "calluna", georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    color: #404040;
+    margin-bottom: 1rem;
+}
+
+article p a {
+		text-decoration: underline;
+}
+
+li {
+	line-height: 2.7rem;
+}
+
+a[href] {
+}
+a[href]:visited {
+}
+a[href]:hover,
+a[href]:active {
+}
+
+main :first-child {
+	margin-top: 0;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed #fff;
+	padding: 1em 0;
+}
+
+.author, .sitenav, .social, .rss {
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px dashed #737;
+}
+
+aside div:first-child {
+	padding-top: 1rem;
+	margin-top: 1rem;
+	border-top: 1px dotted #333;
+}
+
+/* code styles */
+
+pre,
+code {
+	font-family: monospace;
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+
+header {
+	align-items: center;
+	padding: 1em 1em 0 0;
+	margin-bottom: 3rem;
+}
+
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+
+.postlist-item h2 {
+	font-weight: 400;
+	font-size: 2.4rem;
+	margin-bottom: 0;
+}
+
+.postlist {
+	list-style: none;
+	padding: 0;
+}
+.postlist-item {
+	align-items: baseline;
+	padding-bottom: 1rem;
+	margin-bottom: 3em;
+}
+.postlist-date {
+	text-transform: uppercase;
+	color: #999;
+}
+.metadata {
+	margin-top: 1rem;
+	word-spacing: 1px;
+}
+.postlist-link {
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+.post-description {
+	margin-top: 1rem;
+}
+
+/* Tags */
+
+.post-tag {
+	align-items: center;
+	justify-content: center;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin-bottom: 1em;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* image styles */
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* Direct Links / Markdown Headers */
+
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+/* FROM INDEX.CSS */
+
+.footer1 {
+	flex: 1;
+	  order: 1;
+  }
+  
+  .footer2 {
+	  flex: 1;
+	  order: 2;
+  }
+  
+  .footer3 {
+	  flex: 1;
+	  order: 3;
+  }
+  
+  .footer2, .footer3 {
+	  margin-left: 1rem;
+	padding-left: 1rem;
+	border-left: 1px solid #fff;
+  }
+  
+  

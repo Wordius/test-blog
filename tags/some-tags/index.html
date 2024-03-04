@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Tagged “some tags”</title>
+		<meta name="description" content="Most things Apple">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="MacMinded">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="MacMinded">
+		
+		<style>.postlist { counter-reset: start-from 2 }
+* { box-sizing: border-box; }
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+/*:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+*/
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+
+html {
+	font-size: 10px;
+}
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: "calluna-sans", sans-serif;
+	/*color: var(--text-color);*/
+	/*background-color: var(--background-color);*/
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 1024px;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+p {
+	font-family: sans-serif;
+	margin-block-end: 0;
+}
+
+article p:last-child {
+	margin-bottom: 0;
+}
+article p {
+    font-family: "calluna", georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    color: #404040;
+    margin-bottom: 1rem;
+}
+
+article p a {
+		text-decoration: underline;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	/*color: var(--text-color-link);*/
+}
+a[href]:visited {
+	/*color: var(--text-color-link-visited);*/
+}
+a[href]:hover,
+a[href]:active {
+	/*color: var(--text-color-link-active);*/
+}
+
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	/*border-bottom: 1px dashed var(--color-gray-20);*/
+}
+header:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.links-nextprev {
+	list-style: none;
+	border-top: 1px dashed #fff;
+	padding: 1em 0;
+}
+
+.author, .sitenav, .social, .rss {
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px dashed #737;
+}
+
+aside div:first-child {
+	padding-top: 1rem;
+	margin-top: 1rem;
+	border-top: 1px dotted #333;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: monospace;
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	/*-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);*/
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	/*display: flex;*/
+	gap: 1em .5em;
+	/*flex-wrap: wrap;*/
+	align-items: left;
+	padding: 1em 1em 0 0;
+}
+.home-link {
+	font-size: 1em; /* 16px /16 */
+	font-weight: 700;
+	margin-right: 2em;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	/* display: flex; */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	/* display: inline-block; */
+	margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	list-style: none;
+	padding: 0;
+	/* padding-left: 1.5rem; */
+}
+.postlist-item {
+	/* display: flex;
+	flex-wrap: wrap; */
+	align-items: baseline;
+	/* counter-increment: start-from -1; */
+	margin-bottom: 1em;
+}
+/*.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}*/
+.postlist-date/*,
+.postlist-item:before*/ {
+	font-size: 0.8125em; /* 13px /16 */
+	/*color: var(--color-gray-90);*/
+}
+.postlist-date {
+	/* word-spacing: -0.5px; */
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	/*flex-basis: calc(100% - 1.5rem);*/
+	/* padding-left: .25em; */
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	/* display: inline-flex; */
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin-bottom: 1em;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+article p picture {
+	margin-bottom: 0;
+}
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+
+/* bundles.css */
+
+#page /* container */ {
+	max-width: 1024px;
+	margin: 0 auto;
+    padding: 0 10px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#masthead {
+    display: flex;
+    flex-direction: column;
+}
+
+.header_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 1.8rem;
+}
+
+.site-branding {
+	flex: 1;
+	order: 1;
+	}
+
+.advert {
+    background: Coral;
+	flex: 3;
+	order: 2;
+}
+
+ul.nav-menu {
+    margin-bottom: 1.8rem;
+}
+
+.widget {
+    padding-bottom: 1.8rem;
+    border-bottom: 1px dotted #333;
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+}
+
+#primary /* main content */ {
+	margin: 0;
+	flex: 3;
+	order: 2;
+    min-width: 0;
+}
+
+#secondary /* sidebar */ {
+	/* background: #f11; */
+	margin-right: 1.8rem;
+	padding-right: 1.8rem;
+	border-right: 1px solid #000;
+	flex: 1;
+	order: 1;
+}
+
+#custom_html-4 {
+    padding-bottom: 0;
+}
+#custom_html-5 {
+    padding-bottom: 0;
+}
+#custom_html-5 .textwidget p {
+    margin-block-start: 0;
+}
+
+.site-footer {
+    margin: 2rem auto 2rem auto;
+    background: #FFC40C;
+}
+
+#colophon /* footer */ {
+	max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+	flex-direction: row;
+    padding: 1rem;
+    background: #FFC40C;
+}
+
+.footer1 {
+  	flex: 1;
+	order: 1;
+}
+
+.footer2 {
+	flex: 1;
+	order: 2;
+}
+
+.footer3 {
+	flex: 1;
+	order: 3;
+}
+
+.footer2, .footer3 {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid #fff;
+}
+
+article {
+    padding-bottom: 1.8rem;
+    margin-bottom: 1.8rem;
+    border-bottom: 1px solid #333;
+}
+article:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.caption {
+    margin-top: -1rem;
+    font-family: "calluna-sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+ }
+.byline {
+	display: none;
+}
+
+/* TYPOGRAPHY */
+
+html {
+    font-size: 62.5%; /* = 1Rem */
+}
+
+div.entry-content p a {
+    color: #333;
+    text-decoration: underline;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+    color: skyblue;
+}
+body, button, input, select, optgroup, textarea {
+    font-size: 1.5rem;
+}
+.entry-content p {
+    font-family: "calluna", serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    color: #404040;
+}
+
+article h1 {
+	font-family: "calluna", georgia, serif;
+	font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.4;
+	margin: -3.0rem 0 2.4rem;
+}
+article h2 {
+    font-family: "calluna", georgia, serif;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.2;
+}
+article h3 {
+	font-family: calluna-sans, sans-serif;
+    font-size: 1.6rem;
+    text-align: left;
+	line-height: 3rem;
+	text-transform: uppercase;
+	margin: 36px 0 24px;
+    background: #FFC40C;
+    padding: 4px 0 2px 6px;
+}
+
+.entry-meta {
+    text-transform: uppercase;
+    font-family: calluna-sans, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-bottom: 1px dotted #000;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2.4rem;
+}
+
+.credit-intro {
+    font-family: calluna-sans, serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.credit {
+    font-family: calluna-sans, serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+#colophon p, #colophon li {
+    font-size: 1.4rem;
+    color: #000;
+}
+p {
+    margin-block-start: 0;
+}
+
+/* LISTS */
+
+.entry-content ul {
+  list-style: disc;
+  padding-left: 0.8rem;
+	margin-left: 0.8rem;
+	margin-bottom: 1.8rem;
+}
+.entry-content ol {
+  list-style: decimal;
+  padding: 0 0 1.8rem 0.8rem;
+	margin: 0.8rem;
+}
+.entry-content ul li {
+    font-family: calluna, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+
+ul.nav-menu {
+    display: none;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.widget-area ul li {
+	font-size: 1.4rem;
+	text-transform: uppercase;
+}
+
+ul.social, ul.rss, #categories-2 {
+    overflow: auto;
+    /*border-bottom: 1px solid Lime;*/
+}
+ul.social li:first-child {
+	padding-left: 0;
+}
+ul.social li {
+    text-transform: uppercase;
+	float: left;
+	padding-left: 1.8rem;
+}
+.widget-area ul.social li, .widget-area ul.rss li {
+    font-size: 2.4rem;
+}
+
+#colophon a {
+    color: #fff;
+}
+
+/* MOBILE - less than 800px */
+
+@media (max-width: 800px) {
+	.content {
+		flex-direction: column;
+		#primary {
+			order: 1;
+			margin: 0;
+		}
+		#secondary {
+			margin: 0;
+		}
+
+		.nav, .social, .rss {
+			padding-bottom: 1rem;
+			border-bottom: 1px solid #333;
+		}
+
+    #colophon {
+        max-width: 800px;
+    }
+    .footer2, .footer3 {
+        display: none;
+    }
+}</style>
+			<link rel="stylesheet" href="/bundle.css">
+
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<div id="page">
+
+		<header id="masthead">
+
+				<div class="header_container">
+
+			 		<div class="site-branding">
+						<a href="/" class="home-link">
+							<img src="/img/mm-masthead-paths-bw.png" width="200px" height="87px">
+						<!--MacMinded-->
+						</a>
+					</div> <!-- class=site-branding -->
+
+				</div> <!-- class=header-container -->
+
+		</header> <!-- id=masthead -->
+
+		<div class="content">
+
+		<div id="primary">
+
+			<main id="skip">
+				<!-- Delete this message, it will also remove the component CSS from the bundle -->
+
+<!-- message -->
+
+<!-- Stop deleting -->
+
+<h1>Tagged “some tags”</h1>
+
+
+
+<ol reversed class="postlist">
+
+	<li class="postlist-item">
+		<article>
+		<div><h2><a href="/blog/2024-02-22-some/" class="postlist-link">
+		Some time
+		
+		</a></h2>
+		</div>
+		<div><time class="postlist-date" datetime="2024-02-22">22 February 2024</time></div>
+		<p class="post-description"></p>
+	</article>
+	</li>
+
+</ol>
+
+
+<p>See <a href="/tags/">all tags</a>.</p>
+
+
+			</main>
+
+		</div> <!-- id=primary -->
+
+		<aside id="secondary">
+
+			<p class="author"><span>by</span> Jeff Porter</>
+
+		<div class="sitenav">
+			<nav>
+				<h2 class="visually-hidden">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/">Home</a></li>
+					<li class="nav-item"><a href="/blog/">Archive</a></li>
+					<li class="nav-item"><a href="/about/">About Me</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="social">
+			<ul>
+				<li>
+					<a href="https://mastodon.social/@macminded">Mastodon</a>
+				</li>
+			</ul>
+		</div> <!-- class=social -->
+
+		<div class="rss">
+			<ul>
+				<li>
+					<a href="https://mastodon.social/@macminded">RSS</a>
+				</li>
+			</ul>
+		</div>
+
+		</aside> <!-- id=secondary -->
+
+
+		</div> <!-- class=content -->
+
+		</div> <!-- id=page -->
+
+		<footer class="site-footer">
+
+	    <div id="colophon">
+				<div class="footer1">
+
+					<p><strong>Copyright</strong> &copy; Jeff Porter 2013–2024</p>
+
+				</div> <!-- class=footer1 -->
+			</div> <!-- id=footer -->
+
+		</footer>
+
+		<!-- Current page: /tags/some-tags/ -->
+
+	</body>
+</html>

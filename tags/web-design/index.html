@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Tagged “web design”</title>
+		<meta name="description" content="Most things Apple">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="MacMinded">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="MacMinded">
+		
+		<style>.postlist { counter-reset: start-from 2 }
+* { box-sizing: border-box; }
+@font-face {
+	font-family: "tabler-icons";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/tabler-icons.eot?v2.45.0");
+	src: url("../fonts/tabler-icons.eot?#iefix-v2.45.0")
+	src: url("../fonts/tabler-icons.woff2")
+	format("woff2"), url("../fonts/tabler-icons.woff?");*/ 
+	/*format("embedded-opentype"), url("../fonts/tabler-icons.woff2?v2.45.0")*/
+	/*format("woff"), url("../fonts/tabler-icons.ttf?v2.45.0")*/ 
+	/*format("truetype");*/
+  }
+
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* start */
+
+html {
+  	font-size: 62.5%;
+}
+
+body, button, input, select, optgroup, textarea {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+  }
+  
+/* container */ 
+
+#page {
+	max-width: 1024px;
+	margin: 0 auto;
+    padding: 0 10px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#masthead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+}
+
+#primary /* main content */ {
+	margin: 0;
+	flex: 3;
+	order: 2;
+  min-width: 0;
+}
+
+#secondary /* sidebar */ {
+	margin-right: 1.8rem;
+	padding-right: 1.8rem;
+	border-right: 1px solid #000;
+	flex: 1;
+	order: 1;
+}
+
+.site-footer {
+  margin: 2rem auto 2rem auto;
+  background: #FFC40C;
+}
+
+#colophon {
+	max-width: 1024px;
+	margin: 0 auto;
+  	padding: 1rem;
+  	background: #FFC40C;
+}
+	.footer-1 {
+		text-align: center;
+	}
+
+.caption {
+  margin-top: -1rem;
+  font-family: "calluna-sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+ }
+.byline {
+	display: none;
+}
+
+/* image styles */
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+  font-family: "calluna-sans", sans-serif;
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+	margin-bottom: 6rem;
+}
+
+div.entry-content p a {
+  color: #333;
+  text-decoration: underline;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+  color: skyblue;
+}
+.entry-content p {
+    font-family: calluna, georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    color: #404040;
+}
+
+article h1, h1.mainHead {
+	font-family: calluna, georgia, serif;
+	font-weight: 700;
+  	font-size: 3rem;
+  	line-height: 1.4;
+	margin: -1rem 0 2.4rem;
+}
+h1.mainHead {
+	margin-bottom: 5rem;
+}
+
+article h2 {
+    font-family: garamond-premier-pro-display, georgia, serif;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 1.2;
+}
+article h3 {
+	font-family: calluna-sans, sans-serif;
+    font-size: 1.6rem;
+    text-align: left;
+	line-height: 3rem;
+	text-transform: uppercase;
+	margin: 36px 0 24px;
+    background: #FFC40C;
+    padding: 4px 0 2px 6px;
+}
+
+article ul li {
+	color: #404040;
+}
+.entry-meta {
+    text-transform: uppercase;
+    font-family: calluna-sans, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-bottom: 1px dotted #000;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2.4rem;
+}
+
+p.author {
+	margin-block-start: 0;
+	padding-bottom: 2rem;
+}
+
+.credit-intro {
+    font-family: calluna-sans, sans-serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    font-weight: 500;
+	text-transform: lowercase;
+}
+.credit {
+    font-family: calluna-sans, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+#colophon {
+    font-size: 1.4rem;	
+    color: #000;
+}
+
+.about li {
+	text-align center;
+	padding-bottom: 1rem;
+}
+
+
+/* postlist */
+
+.postlist-item h2 {
+	font-weight: 400;
+	font-size: 3rem;
+	margin-bottom: 0;
+}
+
+.postlist {
+	list-style: none;
+	padding: 0;
+}
+
+.postlist-item {
+	align-items: baseline;
+	padding-bottom: 1rem;
+	margin-bottom: 3em;
+}
+.postlist-date {
+	font-family: calluna-sans, sans-serif;
+  	font-size: 1.5rem;
+	text-transform: uppercase;
+	color: #999;
+}
+.metadata {
+	margin-top: 1rem;
+	word-spacing: 1px;
+}
+.postlist-link {
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+.post-description {
+	font-family: calluna, georgia, sans-serif;
+  	font-size: 2rem;
+  	line-height: 1.5;
+	margin-top: 1rem;
+}
+
+/* Tags */
+
+.post-tag {
+	align-items: center;
+	justify-content: center;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin-bottom: 1em;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* image styles */
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* LISTS */
+
+.entry-content ul {
+  list-style: disc;
+  padding-left: 0.8rem;
+	margin-left: 0.8rem;
+	margin-bottom: 1.8rem;
+  font-size: 1.8rem;
+}
+.entry-content ol {
+  list-style: decimal;
+  padding: 0 0 1.8rem 0.8rem;
+	margin: 0.8rem;
+}
+.entry-content ul li {
+    font-family: calluna, georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+
+/* navigation */
+
+.nav-item {
+  line-height: 2.7rem;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li time {
+	text-transform: uppercase;
+	color: #999;
+}
+
+.social {
+	font-family: "tabler-icons";
+	font-size: 3rem;
+	color: #999;
+}
+
+ul.social-icons {
+    overflow: auto;
+}
+.social li {
+	display: inline-block;
+	margin-right: 2rem;
+}
+	.icon-rss:before {
+		content: "\eb19"; /*f03b*/
+	}
+	.icon-mastodon:before {
+		content: "\f250";
+	}
+	.icon-bluesky:before {
+		content: "\fd75";
+	}
+
+.author, .site-nav, .social {
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px dashed #737;
+}
+
+aside {
+	font-family: calluna-sans, sans-serif;
+	text-transform: uppercase;
+}
+
+aside div:first-child {
+	padding-top: 1rem;
+	margin-top: 1rem;
+	border-top: 1px dotted #333;
+}
+
+#colophon a {
+    color: #fff;
+}
+
+/* Direct Links / Markdown Headers */
+
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+
+/* MOBILE - less than 800px */
+
+@media (max-width: 800px) {
+	.content {
+		flex-direction: column;
+		#primary {
+			order: 1;
+			margin: 0;
+		}
+		#secondary {
+			margin: 0;
+		}
+
+		.nav, .social, .rss {
+			padding-bottom: 1rem;
+			border-bottom: 1px solid #333;
+		}
+
+    #colophon {
+        max-width: 800px;
+    }
+    
+}</style>
+			<link rel="stylesheet" href="/bundle.css">
+		<link rel="stylesheet" href="https://use.typekit.net/kga1skp.css">
+		
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<div id="page">
+
+
+				<header id="masthead">
+
+				<div class="header_container">
+
+			 		<div class="site-branding">
+						<a href="/" class="home-link">
+							<img src="/img/mm-masthead-paths-bw.png" width="200px" height="87px">
+						<!--MacMinded-->
+						</a>
+					</div> <!-- site-branding -->
+
+				</div> <!-- header-container -->
+
+		</header> <!-- id=masthead -->
+
+
+
+
+		<div class="content">
+
+			<div id="primary">
+
+			<main id="skip">
+				<article>
+
+				<!-- Delete this message, it will also remove the component CSS from the bundle -->
+
+<!-- message -->
+
+<!-- Stop deleting -->
+
+<h1 class="mainHead">Tagged “web design”</h1>
+
+
+
+<ol reversed class="postlist">
+
+	<li class="postlist-item">
+		<article>
+			<div><h2>
+				<a href="/blog/2013-01-25-rems-ems-or-pixels/" class="postlist-link">
+				Rems, ems or pixels?
+				
+				</a></h2>
+			<div class="metadata"><time class="postlist-date" datetime="2013-01-25">25 January 2013</time>
+			</div>
+			<p class="post-description">It’s quite possible to use rems, ems and pixels in your CSS all at once, but let’s not be greedy</p>
+		</article>
+	</li>
+
+</ol>
+
+
+<p>See <a href="/tags/">all tags</a>.</p>
+
+
+
+				</article>
+			</main>
+
+			</div> <!-- id=primary -->
+
+
+				<aside id="secondary">
+
+				<p class="author"><span class="credit-intro">by</span> <span class="credit">Jeff Porter</span></>
+
+			<div class="site-nav">
+				<nav>
+					<ul class="nav-menu">
+						<li class="nav-item"><a href="/">Home</a></li>
+						<li class="nav-item"><a href="/blog/">Archive</a></li>
+						<li class="nav-item"><a href="/about/">About Me</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="social">
+				<ul class="social-icons">
+					<li>
+						<a href="https://mastodon.social/@macminded"><span class="icon-mastodon"></span></a>
+					</li>
+					<li>
+						<a href="https://bsky.app/profile/macminded.co.uk"><span class="icon-bluesky"></span></a>
+					</li>
+					<li>
+						<a href="https://macminded.co.uk/feed/"><span class="icon-rss"></span></a>
+					</li>
+				</ul>
+			</div>
+
+		</aside> <!-- id=secondary -->
+
+
+		</div> <!-- class=content -->
+
+		</div> <!-- id=page -->
+
+
+				<footer class="site-footer">
+
+	    	<div id="colophon">
+				
+                <div class="footer-1">
+                <ul class="about">
+                	<li><strong>Copyright</strong> &copy; Jeff Porter 2013–2024</li>
+                    <li>&middot; MADE BY HUMAN INTELLIGENCE &middot;</li>
+				</ul>
+                </div>
+
+			</div> <!-- id=colophon -->
+
+		</footer>
+
+
+
+		<!-- Current page: /tags/web-design/ -->
+
+	</body>
+</html>
