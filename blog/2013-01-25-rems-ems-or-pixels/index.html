@@ -334,10 +334,10 @@ h1.mainHead {
 	margin-bottom: 5rem;
 }
 
-article h2 {
+h2.description {
     font-family: garamond-premier-pro-display, georgia, serif;
     font-weight: 400;
-    font-size: 2.4rem;
+    font-size: 3rem;
     line-height: 1.2;
 }
 article h3 {
@@ -397,6 +397,7 @@ p.author {
 /* postlist */
 
 .postlist-item h2 {
+	font-family: garamond-premier-pro-display, georgia, serif;
 	font-weight: 400;
 	font-size: 3rem;
 	margin-bottom: 0;
@@ -655,7 +656,7 @@ h2 + .header-anchor {
 	<li><a href="/tags/pixels/" class="post-tag">pixels</a>, </li>
 	<li><a href="/tags/rems/" class="post-tag">rems</a></li>
 </ul>
-<h2>It’s quite possible to use rems, ems and pixels in your CSS all at once, but let’s not be greedy</h2>
+<h2 class="description">It’s quite possible to use rems, ems and pixels in your CSS all at once, but let’s not be greedy</h2>
 
 	<div class="entry-content">
 		<p>Ever since reading Ethan Marcotte’s ‘Sizing the legible letter’<sup>1</sup> in 2011, I’ve been taken by the <code>rem</code> as a proportional unit for measuring the size of type. For far longer, I was against using the <code>em</code>, the compounding proportional unit that resets the baseline every time the context changes. But I’m a control freak when it comes to type sizing. Before, and through, 2011 I used the pixel unit, and only the pixel, in all its fixed, stubbornly unmoving glory.</p>
