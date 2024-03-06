@@ -107,21 +107,6 @@
 	</url>
 	
 	<url>
-		<loc>http://blog.macminded.co.uk/tags/stationery/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>http://blog.macminded.co.uk/tags/filofax/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>http://blog.macminded.co.uk/tags/parker/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
 		<loc>http://blog.macminded.co.uk/tags/apps/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
@@ -138,6 +123,21 @@
 	
 	<url>
 		<loc>http://blog.macminded.co.uk/tags/merriam-webster/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>http://blog.macminded.co.uk/tags/stationery/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>http://blog.macminded.co.uk/tags/filofax/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>http://blog.macminded.co.uk/tags/parker/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
 	
