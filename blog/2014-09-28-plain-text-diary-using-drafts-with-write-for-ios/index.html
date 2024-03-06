@@ -673,7 +673,7 @@ h2 + .header-anchor {
 <li>To add my thoughts.</li>
 <li>To record birthday and Christmas present purchases – so I don’t end up buying family members the same old dross time and again. This way they get a different kind of dross the following year.</li>
 </ul>
-<h3 id="icloud-instead-of-dropbox" tabindex="-1">iCloud instead of Dropbox <a class="header-anchor" href="#icloud-instead-of-dropbox">#</a></h3>
+<h3 id="icloud-instead-of-dropbox" tabindex="-1">iCloud instead of Dropbox <a class="header-anchor" href="#icloud-instead-of-dropbox">#</a> <a class="header-anchor" href="#icloud-instead-of-dropbox">#</a> <a class="header-anchor" href="#icloud-instead-of-dropbox">#</a></h3>
 <p>As mentioned, Drang’s method uses Dropbox, but I’m swayed to use iCloud instead. So my Drafts’ action x-callbacks <a href="https://itunes.apple.com/us/app/write-for-iphone-note-taking/id587363157?mt=8&amp;uo=4&amp;at=11l4We">Write for iPhone</a> and <a href="https://itunes.apple.com/us/app/write-for-ipad-note-taking/id638171770?mt=8&amp;uo=4&amp;at=11l4We">Write for iPad</a>, both of which are set up to sync with iCloud. Write’s iOS apps will sync with iCloud <em>or</em> Dropbox, not both. So in making this choice, Write does not have access to my main ‘Notes’ folder, stored in Dropbox (at least it doesn’t on iOS). I am happy with this split workflow. My private thoughts and bookmarks (the subject of a future post) are stored in iCloud and accessible in Write. Here is the Drafts’ action:</p>
 <p><picture><source type="image/avif" srcset="/img/9Q7M6zbdGC-588.avif 588w"><source type="image/webp" srcset="/img/9Q7M6zbdGC-588.webp 588w"><img alt="The Drafts’ action" caption="The Drafts’ action" loading="lazy" decoding="async" src="/img/9Q7M6zbdGC-588.png" width="588" height="466"></picture></p>
 <div><figcaption>The Drafts’ action</figcaption></div>
@@ -688,7 +688,7 @@ h2 + .header-anchor {
 <div><figcaption>A Keyboard Maestro macro to set up a new diary entry</figcaption></div>
 <p>Some explanation of how I built this Keyboard Maestro might come in handy here. Select <code>This hot key</code> from the toggle menu and assign a hot key in the field below; I chose <code>^⌘D</code>. Type <code>open</code> in the Actions pane’s search field and double-click <code>Open a File, Folder or Application</code> to add that action to your workflow. In the field next to <code>Open</code> add the OS X text path<sup>2</sup> to the <code>daily-diary.txt</code> file. Next to <code>with</code>, toggle <code>Default application</code> and choose <code>Write</code> from the list.</p>
 <p>The next action in the workflow automatically adds the date and time for the diary entry, and inserts a line space after. Return to the Action pane’s search field, type <code>Insert</code> and double-click the <code>Insert Text</code> action to add it to your workflow. As you can see from the image above, I have added the date and time as a Markdown level 2 heading (##), just as I did in the Drafts’ action I use on iOS. You can type out the <code>LongDate</code> and <code>ShortTime</code> strings or insert them from the <code>Insert Token</code> drop down. Hit return twice and add the <code>Position cursor</code> token from the <code>Insert Token</code> drop down.</p>
-<h3 id="advantages" tabindex="-1">Advantages <a class="header-anchor" href="#advantages">#</a></h3>
+<h3 id="advantages" tabindex="-1">Advantages <a class="header-anchor" href="#advantages">#</a> <a class="header-anchor" href="#advantages">#</a> <a class="header-anchor" href="#advantages">#</a></h3>
 <p>Keeping a diary in this way is much more efficient than any of my old ways. It’s always only a few keystrokes or taps away, which makes it increasingly likely I will keep a diary in the first place.</p>
 <p>It also serves another purpose – check-ins. I’ve only ever dabbled with Foursquare and Facebook check-ins. But this is not the kind of information I feel the need to share with anyone else. Using Drang-style LCP status updates, I can keep a record of where I have been and what I was doing. These will serve as reminders should my future self want to find out what I was up to on any given day.</p>
 <ol>
@@ -699,7 +699,7 @@ h2 + .header-anchor {
 	</div>
 
 </article>
-<ul class="links-nextprev"><li>Previous: <a href="/blog/2013-03-24-alfred-dictionary-search/">Custom dictionary search for Alfred</a></li><li>Next: <a href="/blog/2015-03-16-editorial-workflow/">Keep it simple when establishing an editorial workflow</a></li>
+<ul class="links-nextprev"><li>Previous: <a href="/blog/2013-06-17-the-simplest-productivity-tip-known-to-mackind/">The simplest productivity tip known to Mackind</a></li><li>Next: <a href="/blog/2015-03-16-editorial-workflow/">Keep it simple when establishing an editorial workflow</a></li>
 </ul>
 
 
