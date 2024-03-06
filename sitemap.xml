@@ -132,21 +132,6 @@
 	</url>
 	
 	<url>
-		<loc>http://blog.macminded.co.uk/tags/alfred/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>http://blog.macminded.co.uk/tags/dictionaries/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>http://blog.macminded.co.uk/tags/merriam-webster/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
 		<loc>http://blog.macminded.co.uk/tags/diary/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
@@ -183,6 +168,21 @@
 	
 	<url>
 		<loc>http://blog.macminded.co.uk/tags/editorial-workflows/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>http://blog.macminded.co.uk/tags/alfred/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>http://blog.macminded.co.uk/tags/dictionaries/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>http://blog.macminded.co.uk/tags/merriam-webster/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
 	
