@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Create a plain text diary in iCloud using Drafts and Write for iOS</title>
+		<meta name="description" content="My simple plain text diary is created using Drafts and Write for iOS with x-callback-url">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="MacMinded">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="MacMinded">
+		
+		<style>/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+* { box-sizing: border-box; }
+@font-face {
+	font-family: "tabler-icons";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/fonts/tabler-icons.eot?v2.45.0");
+	src: url("/fonts/tabler-icons.eot?#iefix-v2.45.0")
+	src: url("/fonts/tabler-icons.woff2")
+	format("woff2"), url("/fonts/tabler-icons.woff?");
+	format("embedded-opentype"), url("/fonts/tabler-icons.woff2?v2.45.0")
+	format("woff"), url("/fonts/tabler-icons.ttf?v2.45.0")
+	format("truetype");
+  }
+
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+}
+
+/* start html styles */
+
+html {
+  	font-size: 10px;
+}
+
+body, button, input, select, optgroup, textarea {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+  }
+  
+/* container */ 
+
+#page {
+	max-width: 1024px;
+	margin: 0 auto;
+    padding: 0 10px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#masthead {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.content {
+	display: flex;
+	flex-direction: row;
+}
+
+#primary /* main content */ {
+	margin: 0;
+	flex: 3;
+	order: 2;
+  min-width: 0;
+}
+
+#secondary /* sidebar */ {
+	margin-right: 1.8rem;
+	padding-right: 1.8rem;
+	border-right: 1px solid #000;
+	flex: 1;
+	order: 1;
+}
+
+.site-footer {
+  margin: 2rem auto 2rem auto;
+  background: #FFC40C;
+}
+
+#colophon {
+	max-width: 1024px;
+	margin: 0 auto;
+  	padding: 1rem;
+  	background: #FFC40C;
+}
+	.footer-1 {
+		text-align: center;
+	}
+
+.caption {
+  margin-top: -1rem;
+  font-family: "calluna-sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+ }
+.byline {
+	display: none;
+}
+
+/* image styles */
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+  font-family: "calluna-sans", sans-serif;
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+	margin-bottom: 6rem;
+}
+
+div.entry-content p a {
+  color: #333;
+  text-decoration: underline;
+}
+
+a {
+	color: #333;
+	text-decoration: none;
+}
+a:hover {
+  color: skyblue;
+}
+.entry-content p {
+    font-family: calluna, georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    color: #404040;
+}
+
+article h1, h1.mainHead {
+	font-family: calluna, georgia, serif;
+	font-weight: 700;
+  	font-size: 3rem;
+  	line-height: 1.4;
+	margin: -1rem 0 2.4rem;
+}
+h1.mainHead {
+	margin-bottom: 5rem;
+}
+
+h2.description {
+    font-family: calluna-sans, sans-serif;
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 1.2;
+}
+article h3 {
+	font-family: calluna-sans, sans-serif;
+    font-size: 1.6rem;
+    text-align: left;
+	line-height: 3rem;
+	text-transform: uppercase;
+	margin: 36px 0 24px;
+    background: #FFC40C;
+    padding: 4px 0 2px 6px;
+}
+
+article ul li {
+	color: #404040;
+}
+.entry-meta {
+    text-transform: uppercase;
+    font-family: calluna-sans, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-bottom: 1px dotted #000;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2.4rem;
+}
+
+p.author {
+	margin-block-start: 0;
+	padding-bottom: 2rem;
+}
+
+.credit-intro {
+    font-family: calluna-sans, sans-serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    font-weight: 500;
+	text-transform: lowercase;
+}
+.credit {
+    font-family: calluna-sans, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+#colophon {
+    font-size: 1.4rem;	
+    color: #000;
+}
+
+.about li {
+	text-align center;
+	padding-bottom: 1rem;
+}
+
+
+/* postlist */
+
+.postlist-item h2 {
+	font-family: calluna-sans, sans-serif;
+	font-weight: 700;
+	font-size: 3rem;
+	margin-bottom: 0;
+}
+
+.postlist {
+	list-style: none;
+	padding: 0;
+}
+
+.postlist-item {
+	align-items: baseline;
+	padding-bottom: 1rem;
+	margin-bottom: 3em;
+}
+.postlist-date {
+	font-family: calluna-sans, sans-serif;
+  	font-size: 1.5rem;
+	text-transform: uppercase;
+	color: #999;
+}
+.metadata {
+	margin-top: 1rem;
+	word-spacing: 1px;
+}
+.postlist-link {
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+.post-description {
+	font-family: calluna, georgia, sans-serif;
+  	font-size: 2rem;
+  	line-height: 1.5;
+	margin-top: 1rem;
+}
+
+/* Tags */
+
+.post-tag {
+	align-items: center;
+	justify-content: center;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin-bottom: 1em;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+/* image styles */
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* LISTS */
+
+.entry-content ul {
+  list-style: disc;
+  padding-left: 0.8rem;
+	margin-left: 0.8rem;
+	margin-bottom: 1.8rem;
+  font-size: 1.8rem;
+}
+.entry-content ol {
+  list-style: decimal;
+  padding: 0 0 1.8rem 0.8rem;
+	margin: 0.8rem;
+}
+.entry-content ul li {
+    font-family: calluna, georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+
+/* navigation */
+
+.nav-item {
+  line-height: 2.7rem;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li time {
+	text-transform: uppercase;
+	color: #999;
+}
+
+.social {
+	font-family: "tabler-icons";
+	font-size: 3rem;
+	color: #999;
+}
+
+ul.social-icons {
+    overflow: auto;
+}
+.social li {
+	display: inline-block;
+	margin-right: 2rem;
+}
+	.icon-rss:before {
+		content: "\eb19"; /*f03b*/
+	}
+	.icon-mastodon:before {
+		content: "\f250";
+	}
+	.icon-bluesky:before {
+		content: "\fd75";
+	}
+
+.author, .site-nav, .social {
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px dashed #737;
+}
+
+aside {
+	font-family: calluna-sans, sans-serif;
+	text-transform: uppercase;
+}
+
+aside div:first-child {
+	padding-top: 1rem;
+	margin-top: 1rem;
+	border-top: 1px dotted #333;
+}
+
+#colophon a {
+    color: #fff;
+}
+
+/* Direct Links / Markdown Headers */
+
+.header-anchor {
+	text-decoration: none;
+	font-style: normal;
+	font-size: 1em;
+	margin-left: .1em;
+}
+a[href].header-anchor,
+a[href].header-anchor:visited {
+	color: transparent;
+}
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+	text-decoration: underline;
+}
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+	color: #aaa;
+}
+h2 + .header-anchor {
+	font-size: 1.5em;
+}
+
+
+/* MOBILE - less than 800px */
+
+@media (max-width: 800px) {
+	.content {
+		flex-direction: column;
+		#primary {
+			order: 1;
+			margin: 0;
+		}
+		#secondary {
+			margin: 0;
+		}
+
+		.nav, .social, .rss {
+			padding-bottom: 1rem;
+			border-bottom: 1px solid #333;
+		}
+
+    #colophon {
+        max-width: 800px;
+    }
+    
+}</style>
+			<link rel="stylesheet" href="/bundle.css">
+		<link rel="stylesheet" href="https://use.typekit.net/kga1skp.css">
+		
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<div id="page">
+
+
+				<header id="masthead">
+
+				<div class="header_container">
+
+			 		<div class="site-branding">
+						<a href="/" class="home-link">
+							<img src="/img/mm-masthead-paths-bw.png" width="200px" height="87px">
+						<!--MacMinded-->
+						</a>
+					</div> <!-- site-branding -->
+
+				</div> <!-- header-container -->
+
+		</header> <!-- id=masthead -->
+
+
+
+
+		<div class="content">
+
+			<div id="primary">
+
+			<main id="skip">
+				<article>
+
+				
+<article>
+<h1>Create a plain text diary in iCloud using Drafts and Write for iOS</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2014-09-28">28 September 2014</time></li>
+	<li><a href="/tags/apps/" class="post-tag">apps</a>, </li>
+	<li><a href="/tags/diary/" class="post-tag">diary</a>, </li>
+	<li><a href="/tags/drafts/" class="post-tag">Drafts</a>, </li>
+	<li><a href="/tags/keyboard-maestro/" class="post-tag">Keyboard-Maestro</a>, </li>
+	<li><a href="/tags/launch-center-pro/" class="post-tag">Launch-Center-Pro</a>, </li>
+	<li><a href="/tags/write-for-mac/" class="post-tag">Write-for-Mac</a>, </li>
+	<li><a href="/tags/write-for-iphone/" class="post-tag">Write-for-iPhone</a>, </li>
+	<li><a href="/tags/write-for-ipad/" class="post-tag">Write-for-iPad</a></li>
+</ul>
+<h2 class="description">My simple plain text diary is created using Drafts and Write for iOS with x-callback-url</h2>
+
+	<div class="entry-content">
+		<p>Keeping a diary is one thing I have never been good at.<sup>1</sup> All those broken promises – to myself – whether during the days of pen and paper or, more recently, flirting with <a href="https://itunes.apple.com/us/app/day-one/id422304217?mt=12&amp;uo=4&amp;at=11l4We">Day One for Mac</a>, weigh heavily. It is something that I feel I should do, but, more often than not, don’t. Previous attempts have required too much effort. I also don’t like the way diary entries in Day One are locked in and only accessible by a single app. Day One does offer the option to export entries to plain text, PDF or Markdown, the latter only in the Mac app, but that’s an extra step. I ruled out Evernote for similar reasons. Proprietary file formats, such as those used by Evernote and Microsoft Word, stifle productivity and portability. So, if a future-proof, plain text diary is what’s called for, it makes sense to create it in plain text from the outset.</p>
+<p>Dr Drang’s <a href="http://www.leancrew.com/all-this/2014/08/better-work-diary-actions/">‘Better work diary actions’</a> convinced me that this was the way forward, not backward, as some might think. Drang’s work diary actions combine <a href="https://itunes.apple.com/us/app/launch-center-pro/id532016360?mt=8&amp;uo=4&amp;at=11l4We">Launch Center Pro</a> (LCP) with <a href="https://itunes.apple.com/us/app/drafts/id502385074?mt=8&amp;uo=4&amp;at=11l4We">Drafts</a> to create and save a note per day in Dropbox. Each note can contain multiple entries. He uses LCP for ‘status updates’ and ‘check-ins’ – short notes, like ‘Left home’ or ‘Arrived at work’ – that he can add simply by tapping an icon in Launch Center Pro. Drang may have good reasons for having a note per day, but I prefer a single note – daily-diary.txt – with new entries prepended to the file. As well as using LCP status updates similar to Drang’s, I can add longer entries by typing directly in Drafts and invoking my ‘Diary entry’ action.</p>
+<p>Before I get down to the <em>how</em>, it’s worth noting my reasons for keeping a diary:</p>
+<ul>
+<li>To track back and find out what I was doing on any given day.</li>
+<li>To record app purchases – as a reminder of how long I have been using an app.</li>
+<li>To record product purchases – for warranties and the like.</li>
+<li>To add my thoughts.</li>
+<li>To record birthday and Christmas present purchases – so I don’t end up buying family members the same old dross time and again. This way they get a different kind of dross the following year.</li>
+</ul>
+<h3 id="icloud-instead-of-dropbox" tabindex="-1">iCloud instead of Dropbox <a class="header-anchor" href="#icloud-instead-of-dropbox">#</a></h3>
+<p>As mentioned, Drang’s method uses Dropbox, but I’m swayed to use iCloud instead. So my Drafts’ action x-callbacks <a href="https://itunes.apple.com/us/app/write-for-iphone-note-taking/id587363157?mt=8&amp;uo=4&amp;at=11l4We">Write for iPhone</a> and <a href="https://itunes.apple.com/us/app/write-for-ipad-note-taking/id638171770?mt=8&amp;uo=4&amp;at=11l4We">Write for iPad</a>, both of which are set up to sync with iCloud. Write’s iOS apps will sync with iCloud <em>or</em> Dropbox, not both. So in making this choice, Write does not have access to my main ‘Notes’ folder, stored in Dropbox (at least it doesn’t on iOS). I am happy with this split workflow. My private thoughts and bookmarks (the subject of a future post) are stored in iCloud and accessible in Write. Here is the Drafts’ action:</p>
+<p><picture><source type="image/avif" srcset="/img/9Q7M6zbdGC-588.avif 588w"><source type="image/webp" srcset="/img/9Q7M6zbdGC-588.webp 588w"><img alt="The Drafts’ action" caption="The Drafts’ action" loading="lazy" decoding="async" src="/img/9Q7M6zbdGC-588.png" width="588" height="466"></picture></p>
+<div><figcaption>The Drafts’ action</figcaption></div>
+<p>So what exactly is this doing? First we’re using Write’s url scheme, <code>write app://</code>. We then tell it to <code>prepend</code> the content of the current Drafts note, <code>[[draft]]</code>, to a file called <code>Diary-entry.txt</code>. But before adding <code>[[draft]]</code>, we insert the current date and time as a Markdown level 2 heading (##): <code>%23</code> is url encoding for a hash symbol, <code>%20</code> for a space. Then we insert two linefeeds, <code>%0A%0A</code>, followed by the note itself, <code>[[draft]]</code>, and return to Drafts on successful completion of our entry. Note that I have not added any linefeeds at the end of the entry, as Write does this automatically.</p>
+<p>Then on my Mac, I can access my diary in <a href="https://itunes.apple.com/us/app/write-note-taking-markdown/id848311469?mt=12&amp;uo=4&amp;at=11l4We">Write for Mac’s</a> iCloud tab. Handily, Write allows me to access both my Write-only iCloud files, as well as my main ‘Notes’ folder in Dropbox and any other folder I choose to add to Write for Mac’s ‘Library’. I can open and edit <code>daily-diary.txt</code> in Write for Mac as I see fit. But I have semi-automated the process by creating a simple <a href="http://www.keyboardmaestro.com/main/">Keyboard Maestro</a> macro, as shown in the screenshot below. Keyboard Maestro is a handy Mac productivity tool to have around. This particular macro does the following:</p>
+<ul>
+<li>Locates and opens <code>daily-diary.txt</code></li>
+<li>Starts a new entry by adding a Markdown-formatted date and time</li>
+<li>Puts the cursor on a blank line ready to accept a new entry.</li>
+</ul>
+<p><picture><source type="image/avif" srcset="/img/AbwhwP9Xgl-588.avif 588w"><source type="image/webp" srcset="/img/AbwhwP9Xgl-588.webp 588w"><img alt="A Keyboard Maestro macro to set up a new diary entry" caption="A Keyboard Maestro macro to set up a new diary entry" loading="lazy" decoding="async" src="/img/AbwhwP9Xgl-588.png" width="588" height="409"></picture></p>
+<div><figcaption>A Keyboard Maestro macro to set up a new diary entry</figcaption></div>
+<p>Some explanation of how I built this Keyboard Maestro might come in handy here. Select <code>This hot key</code> from the toggle menu and assign a hot key in the field below; I chose <code>^⌘D</code>. Type <code>open</code> in the Actions pane’s search field and double-click <code>Open a File, Folder or Application</code> to add that action to your workflow. In the field next to <code>Open</code> add the OS X text path<sup>2</sup> to the <code>daily-diary.txt</code> file. Next to <code>with</code>, toggle <code>Default application</code> and choose <code>Write</code> from the list.</p>
+<p>The next action in the workflow automatically adds the date and time for the diary entry, and inserts a line space after. Return to the Action pane’s search field, type <code>Insert</code> and double-click the <code>Insert Text</code> action to add it to your workflow. As you can see from the image above, I have added the date and time as a Markdown level 2 heading (##), just as I did in the Drafts’ action I use on iOS. You can type out the <code>LongDate</code> and <code>ShortTime</code> strings or insert them from the <code>Insert Token</code> drop down. Hit return twice and add the <code>Position cursor</code> token from the <code>Insert Token</code> drop down.</p>
+<h3 id="advantages" tabindex="-1">Advantages <a class="header-anchor" href="#advantages">#</a></h3>
+<p>Keeping a diary in this way is much more efficient than any of my old ways. It’s always only a few keystrokes or taps away, which makes it increasingly likely I will keep a diary in the first place.</p>
+<p>It also serves another purpose – check-ins. I’ve only ever dabbled with Foursquare and Facebook check-ins. But this is not the kind of information I feel the need to share with anyone else. Using Drang-style LCP status updates, I can keep a record of where I have been and what I was doing. These will serve as reminders should my future self want to find out what I was up to on any given day.</p>
+<ol>
+<li>There are plenty of others things I’m not good at, but let’s focus on keeping a diary.</li>
+<li>I use an <a href="http://wordius.com/automator-service-copy-path-file-folder/">Automator service</a> to copy a file’s path to the clipboard. Another way to access a file or folder’s path is to drop it on to an open Terminal window.</li>
+</ol>
+
+	</div>
+
+</article>
+<ul class="links-nextprev"><li>Previous: <a href="/blog/2013-03-24-alfred-dictionary-search/">Custom dictionary search for Alfred</a></li><li>Next: <a href="/blog/2015-03-16-editorial-workflow/">Keep it simple when establishing an editorial workflow</a></li>
+</ul>
+
+
+				</article>
+			</main>
+
+			</div> <!-- id=primary -->
+
+
+				<aside id="secondary">
+
+				<p class="author"><span class="credit-intro">by</span> <span class="credit">Jeff Porter</span></>
+
+			<div class="site-nav">
+				<nav>
+					<ul class="nav-menu">
+						<li class="nav-item"><a href="/">Home</a></li>
+						<li class="nav-item"><a href="/blog/">Archive</a></li>
+						<li class="nav-item"><a href="/about/">About Me</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="social">
+				<ul class="social-icons">
+					<li>
+						<a href="https://mastodon.social/@macminded"><span class="icon-mastodon"></span></a>
+					</li>
+					<li>
+						<a href="https://bsky.app/profile/macminded.co.uk"><span class="icon-bluesky"></span></a>
+					</li>
+					<li>
+						<a href="https://macminded.co.uk/feed/"><span class="icon-rss"></span></a>
+					</li>
+				</ul>
+			</div>
+
+			</div>
+
+		</aside> <!-- id=secondary -->
+
+
+		</div> <!-- class=content -->
+
+		</div> <!-- id=page -->
+
+
+				<footer class="site-footer">
+
+	    	<div id="colophon">
+				
+                <div class="footer-1">
+                <ul class="about">
+                	<li><strong>Copyright</strong> &copy; Jeff Porter 2013–2014</li>
+                    <li>&middot; MADE BY HUMAN INTELLIGENCE &middot;</li>
+				</ul>
+                </div>
+
+			</div> <!-- id=colophon -->
+
+		</footer>
+
+
+
+		<!-- Current page: /blog/2014-09-28-plain-text-diary-using-drafts-with-write-for-ios/ -->
+
+	</body>
+</html>
