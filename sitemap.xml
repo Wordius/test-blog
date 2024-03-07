@@ -77,6 +77,21 @@
 	</url>
 	
 	<url>
+		<loc>http://blog.macminded.co.uk/tags/writing/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>http://blog.macminded.co.uk/tags/criticmarkup/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>http://blog.macminded.co.uk/tags/editorially/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
 		<loc>http://blog.macminded.co.uk/tags/web-design/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
@@ -93,21 +108,6 @@
 	
 	<url>
 		<loc>http://blog.macminded.co.uk/tags/rems/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>http://blog.macminded.co.uk/tags/writing/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>http://blog.macminded.co.uk/tags/criticmarkup/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>http://blog.macminded.co.uk/tags/editorially/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
 	
@@ -147,21 +147,6 @@
 	</url>
 	
 	<url>
-		<loc>http://blog.macminded.co.uk/tags/editorial-workflows/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>http://blog.macminded.co.uk/tags/apple/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
-		<loc>http://blog.macminded.co.uk/tags/backmarket/</loc>
-		<lastmod>2024-02-22</lastmod>
-	</url>
-	
-	<url>
 		<loc>http://blog.macminded.co.uk/tags/productivity/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
@@ -187,17 +172,22 @@
 	</url>
 	
 	<url>
-		<loc>http://blog.macminded.co.uk/tags/write-for-mac/</loc>
+		<loc>http://blog.macminded.co.uk/tags/write/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
 	
 	<url>
-		<loc>http://blog.macminded.co.uk/tags/write-for-iphone/</loc>
+		<loc>http://blog.macminded.co.uk/tags/apple/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
 	
 	<url>
-		<loc>http://blog.macminded.co.uk/tags/write-for-ipad/</loc>
+		<loc>http://blog.macminded.co.uk/tags/backmarket/</loc>
+		<lastmod>2024-02-22</lastmod>
+	</url>
+	
+	<url>
+		<loc>http://blog.macminded.co.uk/tags/editorial-workflows/</loc>
 		<lastmod>2024-02-22</lastmod>
 	</url>
 	
@@ -209,10 +199,5 @@
 	<url>
 		<loc>http://blog.macminded.co.uk/blog/2024-02-24-stroke-and-apples-vision-pro/</loc>
 		<lastmod>2024-02-24</lastmod>
-	</url>
-	
-	<url>
-		<loc>http://blog.macminded.co.uk/blog/Macminded%20blog/Welcome/</loc>
-		<lastmod>2024-03-07</lastmod>
 	</url>
 </urlset>
