@@ -666,14 +666,14 @@ h2 + .header-anchor {
 </code></pre>
 <p>where 16px is the default browser font-size for medium text<sup>2</sup>, and you’re talking math for dummies.</p>
 <p>It sounded like a no-brainer, so from that day to this I’ve used the rem with a pixel fallback, the latter providing support for IE8 and earlier, and Opera.</p>
-<h3 id="the-em-has-legs" tabindex="-1">The em has legs <a class="header-anchor" href="#the-em-has-legs">#</a></h3>
+<h3 id="the-em-has-legs" tabindex="-1">The em has legs <a class="header-anchor" href="#the-em-has-legs">#</a> <a class="header-anchor" href="#the-em-has-legs">#</a> <a class="header-anchor" href="#the-em-has-legs">#</a> <a class="header-anchor" href="#the-em-has-legs">#</a></h3>
 <p>That takes care of font-size. But what about other attributes, such as margins and padding? In ‘On ems and rems’<sup>3</sup>, Filament Group’s Scott Jehl says ‘rems and ems serve different purposes and need not be mutually exclusive’.</p>
 <p>He adds:</p>
 <blockquote>
 <p>[R]ems…can be less helpful when designing proportional whitespace, such as padding and margins that surround the typography in a fluid layout. This is where em units shine. Take for example, a block of content that contains a heading and a paragraph. The amount of spacing that feels comfortable between the heading and the paragraph (and the space between them and adjacent pieces of content) will often change depending on the size of the text. Using em units for the margins and padding in cases like this mean the spacing will automatically adjust in proportion to the font-size, regardless of what it may be.</p>
 </blockquote>
 <p>So, it would seem, the em still has its uses, just not here.</p>
-<h3 id="still-in-em-denial" tabindex="-1">Still in em denial <a class="header-anchor" href="#still-in-em-denial">#</a></h3>
+<h3 id="still-in-em-denial" tabindex="-1">Still in em denial <a class="header-anchor" href="#still-in-em-denial">#</a> <a class="header-anchor" href="#still-in-em-denial">#</a> <a class="header-anchor" href="#still-in-em-denial">#</a> <a class="header-anchor" href="#still-in-em-denial">#</a></h3>
 <p>This site is what you might call minimally fluid, or adaptive–responsive. The type measure on the main blog element is managed down. In fact, through the first breakpoint at 767px the width of the main body text doesn’t change at all; only the margins contract. It remains fixed at 556px till comfortably below the ‘small tablet’ portrait screen width of 600px. At that point, all restrictions are lifted and fluidity reigns; the tide is in, folks.</p>
 <p>All this is achieved using my favoured rem–pixel–fallback formula. Happily these days, though, I write all the code in a CSS preprocessor, <a href="http://sass-lang.com">Sass</a>, which takes care of all the donkey work – the math; yes, even the stuff for dummies. There’s still no place here for the em.</p>
 <p>I’m in the process of converting all units for font sizes, paddings, margins and widths to rems. Ray Brown’s rem()<sup>4</sup> Sass mixin is making my life easier. For example, writing this</p>
