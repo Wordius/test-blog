@@ -8,8 +8,7 @@
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="MacMinded">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="MacMinded">
 		
-		<style>.postlist { counter-reset: start-from 2 }
-* { box-sizing: border-box; }
+		<style>* { box-sizing: border-box; }
 @font-face {
 	font-family: "tabler-icons";
 	font-style: normal;
@@ -227,6 +226,59 @@ p.author {
 }
 
 
+/* image styles */
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* LISTS */
+
+.entry-content ul {
+	font-size: 1.8rem;
+	list-style: disc;
+  	padding-left: 0.8rem;
+	margin-left: 0.8rem;
+	margin-bottom: 1.8rem;
+}
+ul.post-metadata {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.entry-content ul.links-nextprev {
+	font-family: calluna-sans, sans-serif;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.link-nextprev li {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+}
+.entry-content ol {
+  	list-style: decimal;
+  	padding: 0 0 1.8rem 0.8rem;
+	margin: 0.8rem;
+}
+.entry-content ul li {
+    font-family: calluna, georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+
+
 /* postlist */
 
 .postlist-item h2 {
@@ -236,21 +288,25 @@ p.author {
 	margin-bottom: 0;
 }
 
-.postlist {
+ol.postlist {
 	list-style: none;
 	padding: 0;
+	margin: 0;
 }
 
 .postlist-item {
 	align-items: baseline;
 	padding-bottom: 1rem;
 	margin-bottom: 3em;
+	list-style-type: none;
 }
-.postlist-date {
+.postlist-date, .post-tag {
 	font-family: calluna-sans, sans-serif;
   	font-size: 1.5rem;
-	text-transform: uppercase;
 	color: #999;
+}
+.postlist-date { 
+	text-transform: uppercase;
 }
 .metadata {
 	margin-top: 1rem;
@@ -270,6 +326,15 @@ p.author {
   	font-size: 2rem;
   	line-height: 1.5;
 	margin-top: 1rem;
+}
+
+ul.links-nextprev li {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+}
+.link-nextprev {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
 }
 
 /* Tags */
@@ -297,47 +362,11 @@ p.author {
 	margin-right: 1em;
 }
 
-/* image styles */
-
-img {
-  max-width: 100%;
-}
-img[width] {
-  width: auto; /* Defer to max-width */
-}
-img[width][height] {
-  height: auto; /* Preserve aspect ratio */
-}
-
-div figcaption {
-	margin-top: -0.5rem;
-	margin-bottom: 2rem;
-}
-
-/* LISTS */
-
-.entry-content ul {
-  list-style: disc;
-  padding-left: 0.8rem;
-	margin-left: 0.8rem;
-	margin-bottom: 1.8rem;
-  font-size: 1.8rem;
-}
-.entry-content ol {
-  list-style: decimal;
-  padding: 0 0 1.8rem 0.8rem;
-	margin: 0.8rem;
-}
-.entry-content ul li {
-    font-family: calluna, georgia, serif;
-    font-size: 1.8rem;
-    line-height: 2.7rem;
-}
 
 /* navigation */
 
 .nav-item {
-  line-height: 2.7rem;
+  	line-height: 2.7rem;
 }
 
 ul {
@@ -487,7 +516,6 @@ h2 + .header-anchor {
 <!-- Stop deleting -->
 
 <h1 class="mainHead">Tagged “Parker”</h1>
-
 
 
 <ol reversed class="postlist">

@@ -394,6 +394,59 @@ p.author {
 }
 
 
+/* image styles */
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* LISTS */
+
+.entry-content ul {
+	font-size: 1.8rem;
+	list-style: disc;
+  	padding-left: 0.8rem;
+	margin-left: 0.8rem;
+	margin-bottom: 1.8rem;
+}
+ul.post-metadata {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.entry-content ul.links-nextprev {
+	font-family: calluna-sans, sans-serif;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.link-nextprev li {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+}
+.entry-content ol {
+  	list-style: decimal;
+  	padding: 0 0 1.8rem 0.8rem;
+	margin: 0.8rem;
+}
+.entry-content ul li {
+    font-family: calluna, georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+
+
 /* postlist */
 
 .postlist-item h2 {
@@ -403,21 +456,25 @@ p.author {
 	margin-bottom: 0;
 }
 
-.postlist {
+ol.postlist {
 	list-style: none;
 	padding: 0;
+	margin: 0;
 }
 
 .postlist-item {
 	align-items: baseline;
 	padding-bottom: 1rem;
 	margin-bottom: 3em;
+	list-style-type: none;
 }
-.postlist-date {
+.postlist-date, .post-tag {
 	font-family: calluna-sans, sans-serif;
   	font-size: 1.5rem;
-	text-transform: uppercase;
 	color: #999;
+}
+.postlist-date { 
+	text-transform: uppercase;
 }
 .metadata {
 	margin-top: 1rem;
@@ -437,6 +494,15 @@ p.author {
   	font-size: 2rem;
   	line-height: 1.5;
 	margin-top: 1rem;
+}
+
+ul.links-nextprev li {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+}
+.link-nextprev {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
 }
 
 /* Tags */
@@ -464,47 +530,11 @@ p.author {
 	margin-right: 1em;
 }
 
-/* image styles */
-
-img {
-  max-width: 100%;
-}
-img[width] {
-  width: auto; /* Defer to max-width */
-}
-img[width][height] {
-  height: auto; /* Preserve aspect ratio */
-}
-
-div figcaption {
-	margin-top: -0.5rem;
-	margin-bottom: 2rem;
-}
-
-/* LISTS */
-
-.entry-content ul {
-  list-style: disc;
-  padding-left: 0.8rem;
-	margin-left: 0.8rem;
-	margin-bottom: 1.8rem;
-  font-size: 1.8rem;
-}
-.entry-content ol {
-  list-style: decimal;
-  padding: 0 0 1.8rem 0.8rem;
-	margin: 0.8rem;
-}
-.entry-content ul li {
-    font-family: calluna, georgia, serif;
-    font-size: 1.8rem;
-    line-height: 2.7rem;
-}
 
 /* navigation */
 
 .nav-item {
-  line-height: 2.7rem;
+  	line-height: 2.7rem;
 }
 
 ul {
@@ -652,7 +682,7 @@ h2 + .header-anchor {
 <h1>Harbingers of editorial change</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2013-02-13">13 February 2013</time></li>
+	<li><time class="postlist-date" datetime="2013-02-13">13 February 2013</time></li>
 	<li><a href="/tags/writing/" class="post-tag">writing</a>, </li>
 	<li><a href="/tags/criticmarkup/" class="post-tag">CriticMarkup</a>, </li>
 	<li><a href="/tags/editorially/" class="post-tag">Editorially</a></li>
@@ -662,13 +692,13 @@ h2 + .header-anchor {
 	<div class="entry-content">
 		<p>The week is only half baked and already we’ve seen announcements for two new tools that promise long-term benefits for editors and writers. The creators of Editorially and CriticMarkup are attempting to untether editors and writers from their old-school tools (mostly Word) and extend the capabilities of new tools (mostly Markdown).</p>
 <p>The announcements in themselves may not be earth shattering, but there is no doubt in my mind that these new tools are harbingers of significant change in the content creation process.</p>
-<h3 id="write-collaborate-talk" tabindex="-1">Write, collaborate, talk <a class="header-anchor" href="#write-collaborate-talk">#</a></h3>
+<h3 id="write-collaborate-talk" tabindex="-1">Write, collaborate, talk <a class="header-anchor" href="#write-collaborate-talk">#</a> <a class="header-anchor" href="#write-collaborate-talk">#</a> <a class="header-anchor" href="#write-collaborate-talk">#</a> <a class="header-anchor" href="#write-collaborate-talk">#</a></h3>
 <p><a href="http://editorially.com">Editorially</a> tackles the job by swallowing it whole, by offering ‘an ecosystem for the writing process’:</p>
 <blockquote>
 <p>a Markdown-based writing environment lets you focus on the words and create clean markup easily; collaboration tools let you invite friends and trusted colleagues to review or edit your work; a document version system lets you mark points in a document’s history and compare versions to see what changed; notes and activity feeds encourage you to reflect on your work, for yourself and for others; and discussion threads recognize that the conversation around a text is just as important as the text itself.</p>
 </blockquote>
 <p>The exact form Editorially will take is unclear, but the doors open soon. Find out for yourself by <a href="http://editorially.com">signing up</a>.</p>
-<h3 id="find-accept-reject" tabindex="-1">Find, accept, reject <a class="header-anchor" href="#find-accept-reject">#</a></h3>
+<h3 id="find-accept-reject" tabindex="-1">Find, accept, reject <a class="header-anchor" href="#find-accept-reject">#</a> <a class="header-anchor" href="#find-accept-reject">#</a> <a class="header-anchor" href="#find-accept-reject">#</a> <a class="header-anchor" href="#find-accept-reject">#</a></h3>
 <p><a href="http://criticmarkup.com">CriticMarkup</a> is not an ecosystem; it is a syntax that you bolt on to your existing workflow, assuming that workflow involves writing in plain text. In the words of its developer:</p>
 <blockquote>
 <p>CriticMarkup is a way for authors and editors to track changes to documents in plain text. As with Markdown, small groups of distinctive characters allow you to highlight insertions, deletions, substitutions and comments, all without the overhead of heavy, proprietary office suites.</p>
@@ -679,7 +709,7 @@ h2 + .header-anchor {
 	</div>
 
 </article>
-<ul class="links-nextprev"><li>Previous: <a href="/blog/2013-01-25-rems-ems-or-pixels/">Rems, ems or pixels?</a></li><li>Next: <a href="/blog/2013-03-24-alfred-dictionary-search/">Custom dictionary search for Alfred</a></li>
+<ul class="links-nextprev"><li class="link-nextprev">Previous: <a class="link-nextprev" href="/blog/2013-01-25-rems-ems-or-pixels/">Rems, ems or pixels?</a></li><li>Next: <a href="/blog/2013-03-24-alfred-dictionary-search/">Custom dictionary search for Alfred</a></li>
 </ul>
 
 

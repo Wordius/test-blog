@@ -394,6 +394,59 @@ p.author {
 }
 
 
+/* image styles */
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* LISTS */
+
+.entry-content ul {
+	font-size: 1.8rem;
+	list-style: disc;
+  	padding-left: 0.8rem;
+	margin-left: 0.8rem;
+	margin-bottom: 1.8rem;
+}
+ul.post-metadata {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.entry-content ul.links-nextprev {
+	font-family: calluna-sans, sans-serif;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.link-nextprev li {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+}
+.entry-content ol {
+  	list-style: decimal;
+  	padding: 0 0 1.8rem 0.8rem;
+	margin: 0.8rem;
+}
+.entry-content ul li {
+    font-family: calluna, georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+
+
 /* postlist */
 
 .postlist-item h2 {
@@ -403,21 +456,25 @@ p.author {
 	margin-bottom: 0;
 }
 
-.postlist {
+ol.postlist {
 	list-style: none;
 	padding: 0;
+	margin: 0;
 }
 
 .postlist-item {
 	align-items: baseline;
 	padding-bottom: 1rem;
 	margin-bottom: 3em;
+	list-style-type: none;
 }
-.postlist-date {
+.postlist-date, .post-tag {
 	font-family: calluna-sans, sans-serif;
   	font-size: 1.5rem;
-	text-transform: uppercase;
 	color: #999;
+}
+.postlist-date { 
+	text-transform: uppercase;
 }
 .metadata {
 	margin-top: 1rem;
@@ -437,6 +494,15 @@ p.author {
   	font-size: 2rem;
   	line-height: 1.5;
 	margin-top: 1rem;
+}
+
+ul.links-nextprev li {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+}
+.link-nextprev {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
 }
 
 /* Tags */
@@ -464,47 +530,11 @@ p.author {
 	margin-right: 1em;
 }
 
-/* image styles */
-
-img {
-  max-width: 100%;
-}
-img[width] {
-  width: auto; /* Defer to max-width */
-}
-img[width][height] {
-  height: auto; /* Preserve aspect ratio */
-}
-
-div figcaption {
-	margin-top: -0.5rem;
-	margin-bottom: 2rem;
-}
-
-/* LISTS */
-
-.entry-content ul {
-  list-style: disc;
-  padding-left: 0.8rem;
-	margin-left: 0.8rem;
-	margin-bottom: 1.8rem;
-  font-size: 1.8rem;
-}
-.entry-content ol {
-  list-style: decimal;
-  padding: 0 0 1.8rem 0.8rem;
-	margin: 0.8rem;
-}
-.entry-content ul li {
-    font-family: calluna, georgia, serif;
-    font-size: 1.8rem;
-    line-height: 2.7rem;
-}
 
 /* navigation */
 
 .nav-item {
-  line-height: 2.7rem;
+  	line-height: 2.7rem;
 }
 
 ul {
@@ -652,7 +682,7 @@ h2 + .header-anchor {
 <h1>Create a plain text diary in iCloud using Drafts and Write for iOS</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2014-09-28">28 September 2014</time></li>
+	<li><time class="postlist-date" datetime="2014-09-28">28 September 2014</time></li>
 	<li><a href="/tags/apps/" class="post-tag">apps</a>, </li>
 	<li><a href="/tags/diary/" class="post-tag">diary</a>, </li>
 	<li><a href="/tags/drafts/" class="post-tag">Drafts</a>, </li>
@@ -673,7 +703,7 @@ h2 + .header-anchor {
 <li>To add my thoughts.</li>
 <li>To record birthday and Christmas present purchases – so I don’t end up buying family members the same old dross time and again. This way they get a different kind of dross the following year.</li>
 </ul>
-<h3 id="icloud-instead-of-dropbox" tabindex="-1">iCloud instead of Dropbox <a class="header-anchor" href="#icloud-instead-of-dropbox">#</a></h3>
+<h3 id="icloud-instead-of-dropbox" tabindex="-1">iCloud instead of Dropbox <a class="header-anchor" href="#icloud-instead-of-dropbox">#</a> <a class="header-anchor" href="#icloud-instead-of-dropbox">#</a> <a class="header-anchor" href="#icloud-instead-of-dropbox">#</a> <a class="header-anchor" href="#icloud-instead-of-dropbox">#</a></h3>
 <p>As mentioned, Drang’s method uses Dropbox, but I’m swayed to use iCloud instead. So my Drafts’ action x-callbacks <a href="https://itunes.apple.com/us/app/write-for-iphone-note-taking/id587363157?mt=8&amp;uo=4&amp;at=11l4We">Write for iPhone</a> and <a href="https://itunes.apple.com/us/app/write-for-ipad-note-taking/id638171770?mt=8&amp;uo=4&amp;at=11l4We">Write for iPad</a>, both of which are set up to sync with iCloud. Write’s iOS apps will sync with iCloud <em>or</em> Dropbox, not both. So in making this choice, Write does not have access to my main ‘Notes’ folder, stored in Dropbox (at least it doesn’t on iOS). I am happy with this split workflow. My private thoughts and bookmarks (the subject of a future post) are stored in iCloud and accessible in Write. Here is the Drafts’ action:</p>
 <p><picture><source type="image/avif" srcset="/img/9Q7M6zbdGC-588.avif 588w"><source type="image/webp" srcset="/img/9Q7M6zbdGC-588.webp 588w"><img alt="The Drafts’ action" caption="The Drafts’ action" loading="lazy" decoding="async" src="/img/9Q7M6zbdGC-588.png" width="588" height="466"></picture></p>
 <div><figcaption>The Drafts’ action</figcaption></div>
@@ -688,7 +718,7 @@ h2 + .header-anchor {
 <div><figcaption>A Keyboard Maestro macro to set up a new diary entry</figcaption></div>
 <p>Some explanation of how I built this Keyboard Maestro might come in handy here. Select <code>This hot key</code> from the toggle menu and assign a hot key in the field below; I chose <code>^⌘D</code>. Type <code>open</code> in the Actions pane’s search field and double-click <code>Open a File, Folder or Application</code> to add that action to your workflow. In the field next to <code>Open</code> add the OS X text path<sup>2</sup> to the <code>daily-diary.txt</code> file. Next to <code>with</code>, toggle <code>Default application</code> and choose <code>Write</code> from the list.</p>
 <p>The next action in the workflow automatically adds the date and time for the diary entry, and inserts a line space after. Return to the Action pane’s search field, type <code>Insert</code> and double-click the <code>Insert Text</code> action to add it to your workflow. As you can see from the image above, I have added the date and time as a Markdown level 2 heading (##), just as I did in the Drafts’ action I use on iOS. You can type out the <code>LongDate</code> and <code>ShortTime</code> strings or insert them from the <code>Insert Token</code> drop down. Hit return twice and add the <code>Position cursor</code> token from the <code>Insert Token</code> drop down.</p>
-<h3 id="advantages" tabindex="-1">Advantages <a class="header-anchor" href="#advantages">#</a></h3>
+<h3 id="advantages" tabindex="-1">Advantages <a class="header-anchor" href="#advantages">#</a> <a class="header-anchor" href="#advantages">#</a> <a class="header-anchor" href="#advantages">#</a> <a class="header-anchor" href="#advantages">#</a></h3>
 <p>Keeping a diary in this way is much more efficient than any of my old ways. It’s always only a few keystrokes or taps away, which makes it increasingly likely I will keep a diary in the first place.</p>
 <p>It also serves another purpose – check-ins. I’ve only ever dabbled with Foursquare and Facebook check-ins. But this is not the kind of information I feel the need to share with anyone else. Using Drang-style LCP status updates, I can keep a record of where I have been and what I was doing. These will serve as reminders should my future self want to find out what I was up to on any given day.</p>
 <ol>
@@ -699,7 +729,7 @@ h2 + .header-anchor {
 	</div>
 
 </article>
-<ul class="links-nextprev"><li>Previous: <a href="/blog/2013-06-17-the-simplest-productivity-tip-known-to-mackind/">The simplest productivity tip known to Mackind</a></li><li>Next: <a href="/blog/2015-03-16-editorial-workflow/">Keep it simple when establishing an editorial workflow</a></li>
+<ul class="links-nextprev"><li class="link-nextprev">Previous: <a class="link-nextprev" href="/blog/2013-06-17-the-simplest-productivity-tip-known-to-mackind/">The simplest productivity tip known to Mackind</a></li><li>Next: <a href="/blog/2015-03-16-editorial-workflow/">Keep it simple when establishing an editorial workflow</a></li>
 </ul>
 
 

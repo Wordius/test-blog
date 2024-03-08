@@ -394,6 +394,59 @@ p.author {
 }
 
 
+/* image styles */
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* LISTS */
+
+.entry-content ul {
+	font-size: 1.8rem;
+	list-style: disc;
+  	padding-left: 0.8rem;
+	margin-left: 0.8rem;
+	margin-bottom: 1.8rem;
+}
+ul.post-metadata {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.entry-content ul.links-nextprev {
+	font-family: calluna-sans, sans-serif;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.link-nextprev li {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+}
+.entry-content ol {
+  	list-style: decimal;
+  	padding: 0 0 1.8rem 0.8rem;
+	margin: 0.8rem;
+}
+.entry-content ul li {
+    font-family: calluna, georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+
+
 /* postlist */
 
 .postlist-item h2 {
@@ -403,21 +456,25 @@ p.author {
 	margin-bottom: 0;
 }
 
-.postlist {
+ol.postlist {
 	list-style: none;
 	padding: 0;
+	margin: 0;
 }
 
 .postlist-item {
 	align-items: baseline;
 	padding-bottom: 1rem;
 	margin-bottom: 3em;
+	list-style-type: none;
 }
-.postlist-date {
+.postlist-date, .post-tag {
 	font-family: calluna-sans, sans-serif;
   	font-size: 1.5rem;
-	text-transform: uppercase;
 	color: #999;
+}
+.postlist-date { 
+	text-transform: uppercase;
 }
 .metadata {
 	margin-top: 1rem;
@@ -437,6 +494,15 @@ p.author {
   	font-size: 2rem;
   	line-height: 1.5;
 	margin-top: 1rem;
+}
+
+ul.links-nextprev li {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+}
+.link-nextprev {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
 }
 
 /* Tags */
@@ -464,47 +530,11 @@ p.author {
 	margin-right: 1em;
 }
 
-/* image styles */
-
-img {
-  max-width: 100%;
-}
-img[width] {
-  width: auto; /* Defer to max-width */
-}
-img[width][height] {
-  height: auto; /* Preserve aspect ratio */
-}
-
-div figcaption {
-	margin-top: -0.5rem;
-	margin-bottom: 2rem;
-}
-
-/* LISTS */
-
-.entry-content ul {
-  list-style: disc;
-  padding-left: 0.8rem;
-	margin-left: 0.8rem;
-	margin-bottom: 1.8rem;
-  font-size: 1.8rem;
-}
-.entry-content ol {
-  list-style: decimal;
-  padding: 0 0 1.8rem 0.8rem;
-	margin: 0.8rem;
-}
-.entry-content ul li {
-    font-family: calluna, georgia, serif;
-    font-size: 1.8rem;
-    line-height: 2.7rem;
-}
 
 /* navigation */
 
 .nav-item {
-  line-height: 2.7rem;
+  	line-height: 2.7rem;
 }
 
 ul {
@@ -652,7 +682,7 @@ h2 + .header-anchor {
 <h1>The simplest productivity tip known to Mackind</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2013-06-17">17 June 2013</time></li>
+	<li><time class="postlist-date" datetime="2013-06-17">17 June 2013</time></li>
 	<li><a href="/tags/productivity/" class="post-tag">productivity</a></li>
 </ul>
 <h2 class="description">OS X’s Dock is your Mac’s activity hub. But out of sight often equates to out of mind if you want to be more productive</h2>
@@ -666,7 +696,7 @@ h2 + .header-anchor {
 <p><picture><source type="image/avif" srcset="/img/Y0nLoACV-j-600.avif 600w"><source type="image/webp" srcset="/img/Y0nLoACV-j-600.webp 600w"><img alt="OS X’s Dock is hidden" caption="The Dock is gone: all that extra space is now available to open application windows and, more importantly, there’s less clutter to distract you from the job in hand. Granted, there’s not much going on in my case!" loading="lazy" decoding="async" src="/img/Y0nLoACV-j-600.jpeg" width="600" height="338"></picture></p>
 <div><figcaption>The Dock is gone: all that extra space is now available to open application windows and, more importantly, there’s less clutter to distract you from the job in hand. Granted, there’s not much going on in my case!</figcaption></div>
 <p>Back when I first made this magnificent discovery, hiding the Dock brought with it an urge to discover better ways to use my Mac.</p>
-<h2 id="anyone-for-a-spot-of-keyboarding" tabindex="-1">Anyone for a spot of keyboarding? <a class="header-anchor" href="#anyone-for-a-spot-of-keyboarding">#</a></h2>
+<h2 id="anyone-for-a-spot-of-keyboarding" tabindex="-1">Anyone for a spot of keyboarding? <a class="header-anchor" href="#anyone-for-a-spot-of-keyboarding">#</a> <a class="header-anchor" href="#anyone-for-a-spot-of-keyboarding">#</a> <a class="header-anchor" href="#anyone-for-a-spot-of-keyboarding">#</a> <a class="header-anchor" href="#anyone-for-a-spot-of-keyboarding">#</a></h2>
 <p>With OS X’s Dock out of sight, I took the next step on the productivity ladder by using my keyboard rather than my mouse to launch apps and locate files and folders. I could write a book on keyboarding – and I’ve no doubt someone probably already has – but to round off this post, let’s just consider one technique.</p>
 <p>Spotlight is OS X’s built-in search application. It knows where everything is on your Mac, and it’s entire reason for being is to help you find what you’re looking for. Sadly, most of the people aren’t even aware of its existence, and many of those that do choose not to use it.</p>
 <p>To launch Spotlight you could reach for your mouse and click the magnifying glass in the menu bar at the top right of your screen, but <code>⌘-space bar</code> then typing your query – the name of an app, file, or folder – is much quicker. Spotlight will do the rest, generating a list of the most relevant results. If Spotlight’s top result isn’t what you’re looking for, down-arrow to highlight the correct one then hit return.</p>
@@ -677,7 +707,7 @@ h2 + .header-anchor {
 	</div>
 
 </article>
-<ul class="links-nextprev"><li>Previous: <a href="/blog/2013-03-24-alfred-dictionary-search/">Custom dictionary search for Alfred</a></li><li>Next: <a href="/blog/2014-09-28-plain-text-diary-using-drafts-with-write-for-ios/">Create a plain text diary in iCloud using Drafts and Write for iOS</a></li>
+<ul class="links-nextprev"><li class="link-nextprev">Previous: <a class="link-nextprev" href="/blog/2013-03-24-alfred-dictionary-search/">Custom dictionary search for Alfred</a></li><li>Next: <a href="/blog/2014-09-28-plain-text-diary-using-drafts-with-write-for-ios/">Create a plain text diary in iCloud using Drafts and Write for iOS</a></li>
 </ul>
 
 

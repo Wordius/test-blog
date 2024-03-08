@@ -394,6 +394,59 @@ p.author {
 }
 
 
+/* image styles */
+
+img {
+  max-width: 100%;
+}
+img[width] {
+  width: auto; /* Defer to max-width */
+}
+img[width][height] {
+  height: auto; /* Preserve aspect ratio */
+}
+
+div figcaption {
+	margin-top: -0.5rem;
+	margin-bottom: 2rem;
+}
+
+/* LISTS */
+
+.entry-content ul {
+	font-size: 1.8rem;
+	list-style: disc;
+  	padding-left: 0.8rem;
+	margin-left: 0.8rem;
+	margin-bottom: 1.8rem;
+}
+ul.post-metadata {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.entry-content ul.links-nextprev {
+	font-family: calluna-sans, sans-serif;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.link-nextprev li {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+}
+.entry-content ol {
+  	list-style: decimal;
+  	padding: 0 0 1.8rem 0.8rem;
+	margin: 0.8rem;
+}
+.entry-content ul li {
+    font-family: calluna, georgia, serif;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+}
+
+
 /* postlist */
 
 .postlist-item h2 {
@@ -403,21 +456,25 @@ p.author {
 	margin-bottom: 0;
 }
 
-.postlist {
+ol.postlist {
 	list-style: none;
 	padding: 0;
+	margin: 0;
 }
 
 .postlist-item {
 	align-items: baseline;
 	padding-bottom: 1rem;
 	margin-bottom: 3em;
+	list-style-type: none;
 }
-.postlist-date {
+.postlist-date, .post-tag {
 	font-family: calluna-sans, sans-serif;
   	font-size: 1.5rem;
-	text-transform: uppercase;
 	color: #999;
+}
+.postlist-date { 
+	text-transform: uppercase;
 }
 .metadata {
 	margin-top: 1rem;
@@ -437,6 +494,15 @@ p.author {
   	font-size: 2rem;
   	line-height: 1.5;
 	margin-top: 1rem;
+}
+
+ul.links-nextprev li {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
+}
+.link-nextprev {
+	font-family: calluna-sans, sans-serif;
+	font-size: 1.5rem;
 }
 
 /* Tags */
@@ -464,47 +530,11 @@ p.author {
 	margin-right: 1em;
 }
 
-/* image styles */
-
-img {
-  max-width: 100%;
-}
-img[width] {
-  width: auto; /* Defer to max-width */
-}
-img[width][height] {
-  height: auto; /* Preserve aspect ratio */
-}
-
-div figcaption {
-	margin-top: -0.5rem;
-	margin-bottom: 2rem;
-}
-
-/* LISTS */
-
-.entry-content ul {
-  list-style: disc;
-  padding-left: 0.8rem;
-	margin-left: 0.8rem;
-	margin-bottom: 1.8rem;
-  font-size: 1.8rem;
-}
-.entry-content ol {
-  list-style: decimal;
-  padding: 0 0 1.8rem 0.8rem;
-	margin: 0.8rem;
-}
-.entry-content ul li {
-    font-family: calluna, georgia, serif;
-    font-size: 1.8rem;
-    line-height: 2.7rem;
-}
 
 /* navigation */
 
 .nav-item {
-  line-height: 2.7rem;
+  	line-height: 2.7rem;
 }
 
 ul {
@@ -652,7 +682,7 @@ h2 + .header-anchor {
 <h1>My life in Macs</h1>
 
 <ul class="post-metadata">
-	<li><time datetime="2024-02-06">06 February 2024</time></li>
+	<li><time class="postlist-date" datetime="2024-02-06">06 February 2024</time></li>
 	<li><a href="/tags/apple/" class="post-tag">Apple</a>, </li>
 	<li><a href="/tags/backmarket/" class="post-tag">Backmarket</a></li>
 </ul>
@@ -663,32 +693,32 @@ h2 + .header-anchor {
 <div><figcaption>Macbook Air 2017</figcaption></div>
 <p>Over 30 years of Macs crammed into a few hundred words… Shouldn’t be too difficult, he says, as his 60th approaches at a rate of knots.</p>
 <p>Many of my earlier Macs weren’t bought for their specs, beyond the simple matter of storage space and RAM. To the best of my knowledge it went something like this.</p>
-<h3 id="macintosh-quadra-680" tabindex="-1">Macintosh Quadra 680 <a class="header-anchor" href="#macintosh-quadra-680">#</a></h3>
+<h3 id="macintosh-quadra-680" tabindex="-1">Macintosh Quadra 680 <a class="header-anchor" href="#macintosh-quadra-680">#</a> <a class="header-anchor" href="#macintosh-quadra-680">#</a> <a class="header-anchor" href="#macintosh-quadra-680">#</a> <a class="header-anchor" href="#macintosh-quadra-680">#</a></h3>
 <p>Back in 1994 I bought my first Mac because I needed something to use at home capable of running QuarkXpress, which I needed for my work. I paired it with an Apple monitor.</p>
-<h3 id="mac-quadra-800-tower" tabindex="-1">Mac Quadra 800 (tower) <a class="header-anchor" href="#mac-quadra-800-tower">#</a></h3>
+<h3 id="mac-quadra-800-tower" tabindex="-1">Mac Quadra 800 (tower) <a class="header-anchor" href="#mac-quadra-800-tower">#</a> <a class="header-anchor" href="#mac-quadra-800-tower">#</a> <a class="header-anchor" href="#mac-quadra-800-tower">#</a> <a class="header-anchor" href="#mac-quadra-800-tower">#</a></h3>
 <p>The second was a big step up at the time. I needed the computer to handle Quark with ease, which it did. And PhotoShop, among others.</p>
-<h3 id="imac-21in" tabindex="-1">iMac 21in <a class="header-anchor" href="#imac-21in">#</a></h3>
+<h3 id="imac-21in" tabindex="-1">iMac 21in <a class="header-anchor" href="#imac-21in">#</a> <a class="header-anchor" href="#imac-21in">#</a> <a class="header-anchor" href="#imac-21in">#</a> <a class="header-anchor" href="#imac-21in">#</a></h3>
 <p>The iMac was my first foray into unibodied Macs. It worked so well that I’ve finally returned to using an iMac, only this time the bigger model.</p>
-<h3 id="macbook-pro" tabindex="-1">MacBook Pro <a class="header-anchor" href="#macbook-pro">#</a></h3>
+<h3 id="macbook-pro" tabindex="-1">MacBook Pro <a class="header-anchor" href="#macbook-pro">#</a> <a class="header-anchor" href="#macbook-pro">#</a> <a class="header-anchor" href="#macbook-pro">#</a> <a class="header-anchor" href="#macbook-pro">#</a></h3>
 <p>The only Mac to fail on me, but that only happened after at least five years of ownership. Meantime, it travelled the world, whether I was roaming around the US or Europe.</p>
-<h3 id="a-mac-mini-with-27in-apple-vision-pro-monitor" tabindex="-1">A Mac Mini with 27in Apple Vision Pro monitor <a class="header-anchor" href="#a-mac-mini-with-27in-apple-vision-pro-monitor">#</a></h3>
+<h3 id="a-mac-mini-with-27in-apple-vision-pro-monitor" tabindex="-1">A Mac Mini with 27in Apple Vision Pro monitor <a class="header-anchor" href="#a-mac-mini-with-27in-apple-vision-pro-monitor">#</a> <a class="header-anchor" href="#a-mac-mini-with-27in-apple-vision-pro-monitor">#</a> <a class="header-anchor" href="#a-mac-mini-with-27in-apple-vision-pro-monitor">#</a> <a class="header-anchor" href="#a-mac-mini-with-27in-apple-vision-pro-monitor">#</a></h3>
 <p>This was a step in the wrong direction. While the monitor was fine, the Mac Mini was a constant letdown. Slow.</p>
-<h3 id="mac-mini" tabindex="-1">Mac Mini <a class="header-anchor" href="#mac-mini">#</a></h3>
+<h3 id="mac-mini" tabindex="-1">Mac Mini <a class="header-anchor" href="#mac-mini">#</a> <a class="header-anchor" href="#mac-mini">#</a> <a class="header-anchor" href="#mac-mini">#</a> <a class="header-anchor" href="#mac-mini">#</a></h3>
 <p>A second Mac Mini followed. It was my first venture into second-hand Macs. I bought the Mini from <a href="https://backmarket.co.uk">Backmarket</a>, a company well versed in the used Apple tech sphere. It worked. Perfectly. And I sold it on when it had run its course. Which is more than I can say for the monitor, which had given up the ghost by then.</p>
-<h3 id="imac-27in-2017" tabindex="-1">iMac 27in, 2017 <a class="header-anchor" href="#imac-27in-2017">#</a></h3>
+<h3 id="imac-27in-2017" tabindex="-1">iMac 27in, 2017 <a class="header-anchor" href="#imac-27in-2017">#</a> <a class="header-anchor" href="#imac-27in-2017">#</a> <a class="header-anchor" href="#imac-27in-2017">#</a> <a class="header-anchor" href="#imac-27in-2017">#</a></h3>
 <p>The current workhorse, a 2017 iMac bought in 2023, also from Backmarket. It’s quick for my needs and up to the task of running all the Adobe apps I need for work, such as InDesign, PhotoShop and Illustrator.</p>
-<h3 id="macbook-air-13in-2017" tabindex="-1">MacBook Air 13in, 2017 <a class="header-anchor" href="#macbook-air-13in-2017">#</a></h3>
+<h3 id="macbook-air-13in-2017" tabindex="-1">MacBook Air 13in, 2017 <a class="header-anchor" href="#macbook-air-13in-2017">#</a> <a class="header-anchor" href="#macbook-air-13in-2017">#</a> <a class="header-anchor" href="#macbook-air-13in-2017">#</a> <a class="header-anchor" href="#macbook-air-13in-2017">#</a></h3>
 <p>My writing tool. It has everything installed on it apart from the Adobe products mentioned earlier. Among the software installed is Obsidian, my choice of note taking app, NetNewsWire (RSS reader), Omnivore (read later), and Alfred, with all of its workflows and snippets. Bought from Backmarket.</p>
-<h3 id="iphones" tabindex="-1">iPhones <a class="header-anchor" href="#iphones">#</a></h3>
+<h3 id="iphones" tabindex="-1">iPhones <a class="header-anchor" href="#iphones">#</a> <a class="header-anchor" href="#iphones">#</a> <a class="header-anchor" href="#iphones">#</a> <a class="header-anchor" href="#iphones">#</a></h3>
 <p>I have had no end of iPhones, but the last, the 5S, stuck around for longest. Its replacement is the similarly sized SE 2020 (Backmarket). I like my phones small.</p>
-<h3 id="ipads" tabindex="-1">iPads <a class="header-anchor" href="#ipads">#</a></h3>
+<h3 id="ipads" tabindex="-1">iPads <a class="header-anchor" href="#ipads">#</a> <a class="header-anchor" href="#ipads">#</a> <a class="header-anchor" href="#ipads">#</a> <a class="header-anchor" href="#ipads">#</a></h3>
 <p>The first iPad I owned was the 2nd generation model. That was eventually followed by 6th generation (Backmarket), which I still have. Over time I’ve tried to use it as my writing station, but that never lasted long. That’s why I bought the MacBook Air.</p>
 <p>Along the way I’ve experimented with a PC and a couple of Chromebooks, but neither stuck around for long.</p>
 
 	</div>
 
 </article>
-<ul class="links-nextprev"><li>Previous: <a href="/blog/2015-03-16-editorial-workflow/">Keep it simple when establishing an editorial workflow</a></li><li>Next: <a href="/blog/2024-02-24-stroke-and-apples-vision-pro/">Stroke and Apple’s Vision Pro</a></li>
+<ul class="links-nextprev"><li class="link-nextprev">Previous: <a class="link-nextprev" href="/blog/2015-03-16-editorial-workflow/">Keep it simple when establishing an editorial workflow</a></li><li>Next: <a href="/blog/2024-02-24-stroke-and-apples-vision-pro/">Stroke and Apple’s Vision Pro</a></li>
 </ul>
 
 
